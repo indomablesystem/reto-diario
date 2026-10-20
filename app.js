@@ -127,7 +127,8 @@ function chequearRecordatorio(){
     if('Notification' in window&&Notification.permission==='granted')new Notification('Reto Diario',{body:'Aún te faltan metas por completar hoy 💪',icon:'icon.svg'});
   }
 }
-setInterval(chequearRecordatorio,30000);
+let diaMostrado=hoy();
+setInterval(()=>{if(hoy()!==diaMostrado){diaMostrado=hoy();vista=new Date();vista.setDate(1);render()}chequearRecordatorio()},30000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){render();chequearRecordatorio()}});
 
 // Copia de seguridad
