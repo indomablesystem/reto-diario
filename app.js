@@ -124,7 +124,7 @@ function chequearRecordatorio(){
   if(hm>=db.cfg.hora&&avisado!==hoy()){
     avisado=hoy();
     const b=$('#banner');b.hidden=false;b.className='banner warn';b.textContent='⏰ Aún te faltan metas por completar hoy';
-    if('Notification' in window&&Notification.permission==='granted')new Notification('Reto Diario',{body:'Aún te faltan metas por completar hoy 💪',icon:'icon.svg'});
+    if('Notification' in window&&Notification.permission==='granted')new Notification('Reto Diario',{body:'Aún te faltan metas por completar hoy 💪',icon:'icon-192.png'});
   }
 }
 let diaMostrado=hoy();
