@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Reto Diario</title>
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Reto Diario</h1>
+      <p id="fecha"></p>
+    </div>
+    <div class="racha"><span id="racha">0</span><small>🔥 racha</small><small id="record"></small></div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <section id="metas"></section>
+
+  <section class="card">
+    <div class="row"><h2 id="mesTitulo"></h2>
+      <div><button class="ghost" id="prev">‹</button><button class="ghost" id="next">›</button></div></div>
+    <div id="cal" class="cal"></div>
+    <p class="leyenda"><i class="ok"></i>Completo <i class="part"></i>Parcial <i class="none"></i>Nada</p>
+  </section>
+
+  <section class="card">
+    <h2>Últimos 14 días</h2>
+    <div id="grafica" class="grafica"></div>
+    <p class="leyenda">Promedio de cumplimiento diario de las 4 metas</p>
+  </section>
+
+  <section class="card">
+    <h2>Ajustes</h2>
+    <label class="row">Recordatorio diario
+      <input type="time" id="hora">
+    </label>
+    <label class="row">Activar recordatorio
+      <input type="checkbox" id="recOn">
+    </label>
+    <div class="row">
+      <button class="ghost" id="exp">Exportar copia</button>
+      <button class="ghost" id="imp">Importar copia</button>
+    </div>
+    <input type="file" id="file" accept="application/json" hidden>
+    <p class="nota">Los datos se guardan solo en este teléfono. Exporta una copia de vez en cuando.</p>
+  </section>
+</main>
+<div id="detalle" class="modal" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
